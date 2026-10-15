@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexusGear | Premium Smartphone Accessories</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#0f172a',
+                        cardBg: '#1e293b',
+                        accentBlue: '#3b82f6',
+                        accentHover: '#2563eb'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-darkBg text-gray-100 font-sans antialiased selection:bg-accentBlue selection:text-white">
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 bg-darkBg/90 backdrop-blur-md border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-400 flex items-center justify-center shadow-lg shadow-blue-500/30">
+                    <i class="fa-solid fa-bolt text-white text-lg"></i>
+                </div>
+                <span class="text-2xl font-extrabold tracking-tight bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent">NexusGear</span>
+            </div>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-300">
+                <a href="#home" class="hover:text-accentBlue transition-colors">Home</a>
+                <a href="#shop" class="hover:text-accentBlue transition-colors">Products</a>
+                <a href="#categories" class="hover:text-accentBlue transition-colors">Categories</a>
+                <a href="#support" class="hover:text-accentBlue transition-colors">Support</a>
+            </nav>
+
+            <!-- Action Icons -->
+            <div class="flex items-center space-x-4">
+                <button onclick="toggleCart()" class="relative p-2.5 rounded-xl bg-cardBg hover:bg-gray-800 transition-colors border border-gray-700/50">
+                    <i class="fa-solid fa-bag-shopping text-gray-200"></i>
+                    <span id="cart-count" class="absolute -top-1.5 -right-1.5 bg-accentBlue text-white text-xs w-5 h-5 rounded-full flex items-center justify-center font-bold shadow-md">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative overflow-hidden py-20 lg:py-32">
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-950/40 via-darkBg to-darkBg pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-semibold tracking-wide uppercase">
+                        <i class="fa-solid fa-star text-[10px]"></i>
+                        <span>Next-Gen Tech Essentials</span>
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight">
+                        Elevate Your Mobile <span class="bg-gradient-to-r from-blue-400 to-indigo-500 bg-clip-text text-transparent">Experience</span>
+                    </h1>
+                    <p class="text-gray-400 text-base sm:text-lg max-w-xl">
+                        Discover engineered cases, ultra-fast GaN chargers, mag-safe mounts, and high-fidelity audio gear designed for maximum performance.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-stretch sm:items-center space-y-3 sm:space-y-0 sm:space-x-4 pt-4">
+                        <a href="#shop" class="px-8 py-3.5 rounded-xl bg-accentBlue hover:bg-accentHover text-white font-semibold shadow-lg shadow-blue-600/30 transition-all text-center">
+                            Explore Collection
+                        </a>
+                        <a href="#categories" class="px-8 py-3.5 rounded-xl bg-cardBg hover:bg-gray-800 text-gray-200 border border-gray-700/60 font-semibold transition-all text-center">
+                            View Categories
+                        </a>
+                    </div>
+                </div>
+                <div class="relative flex justify-center">
+                    <div class="w-full max-w-md bg-gradient-to-br from-cardBg to-gray-900 border border-gray-800 rounded-3xl p-6 shadow-2xl relative">
+                        <div class="absolute -top-3 -right-3 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow">Best Seller</div>
+                        <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&q=80&w=600" alt="Wireless Earbuds & Case" class="rounded-2xl w-full h-64 object-cover mb-4">
+                        <h3 class="text-xl font-bold">Apex Pro MagSafe Bundle</h3>
+                        <p class="text-gray-400 text-sm mt-1">Includes 100W GaN charger, magnetic stand, and armored casing.</p>
+                        <div class="flex items-center justify-between mt-4">
+                            <span class="text-2xl font-black text-blue-400">$89.99</span>
+                            <button onclick="addToCart('Apex Pro MagSafe Bundle', 89.99)" class="px-4 py-2 bg-accentBlue hover:bg-accentHover rounded-xl text-sm font-semibold transition-colors">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Category Highlights -->
+    <section id="categories" class="py-16 bg-cardBg/30 border-y border-gray-800/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl sm:text-3xl font-bold text-center mb-10">Shop By Category</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="group bg-cardBg border border-gray-800 rounded-2xl p-6 text-center hover:border-blue-500/50 transition-all cursor-pointer">
+                    <div class="w-14 h-14 mx-auto rounded-2xl bg-blue-500/10 flex items-center justify-center text-blue-400 mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-shield-halved text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-base">Cases & Armor</h3>
+                    <p class="text-xs text-gray-400 mt-1">Drop-tested protection</p>
+                </div>
+                <div class="group bg-cardBg border border-gray-800 rounded-2xl p-6 text-center hover:border-blue-500/50 transition-all cursor-pointer">
+                    <div class="w-14 h-14 mx-auto rounded-2xl bg-blue-500/10 flex items-center justify-center text-blue-400 mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-bolt text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-base">Fast Chargers</h3>
+                    <p class="text-xs text-gray-400 mt-1">GaN & Wireless pads</p>
+                </div>
+                <div class="group bg-cardBg border border-gray-800 rounded-2xl p-6 text-center hover:border-blue-500/50 transition-all cursor-pointer">
+                    <div class="w-14 h-14 mx-auto rounded-2xl bg-blue-500/10 flex items-center justify-center text-blue-400 mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-headphones text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-base">Audio Gear</h3>
+                    <p class="text-xs text-gray-400 mt-1">TWS & Active ANC</p>
+                </div>
+                <div class="group bg-cardBg border border-gray-800 rounded-2xl p-6 text-center hover:border-blue-500/50 transition-all cursor-pointer">
+                    <div class="w-14 h-14 mx-auto rounded-2xl bg-blue-500/10 flex items-center justify-center text-blue-400 mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-car text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-base">Mounts & Stands</h3>
+                    <p class="text-xs text-gray-400 mt-1">MagSafe desk & auto</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Showcase -->
+    <section id="shop" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <h2 class="text-3xl font-black tracking-tight">Featured Accessories</h2>
+                    <p class="text-gray-400 text-sm mt-1">Handpicked gear crafted for ultimate everyday utility.</p>
+                </div>
+            </div>
+
+            <!-- Product Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Product 1 -->
+                <div class="bg-cardBg border border-gray-800 rounded-2xl overflow-hidden group hover:border-gray-700 transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="relative overflow-hidden h-56">
+                            <img src="https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&q=80&w=500" alt="Charger" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <span class="text-xs font-semibold text-blue-400 uppercase tracking-wider">Charging</span>
+                            <h3 class="text-lg font-bold mt-1">Ultra 65W GaN Wall Charger</h3>
+                            <p class="text-gray-400 text-sm mt-2">Triple-port fast charger with intelligent power distribution.</p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 flex items-center justify-between">
+                        <span class="text-xl font-black text-white">$45.00</span>
+                        <button onclick="addToCart('Ultra 65W GaN Wall Charger', 45.00)" class="px-4 py-2 bg-accentBlue hover:bg-accentHover rounded-xl text-sm font-semibold transition-colors">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="bg-cardBg border border-gray-800 rounded-2xl overflow-hidden group hover:border-gray-700 transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="relative overflow-hidden h-56">
+                            <img src="https://images.unsplash.com/photo-1575695342320-d2d2d2f9b73f?auto=format&fit=crop&q=80&w=500" alt="MagSafe Case" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <span class="text-xs font-semibold text-blue-400 uppercase tracking-wider">Protection</span>
+                            <h3 class="text-lg font-bold mt-1">Titanium Armor Case</h3>
+                            <p class="text-gray-400 text-sm mt-2">Military-grade drop protection with precise MagSafe alignment.</p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 flex items-center justify-between">
+                        <span class="text-xl font-black text-white">$34.99</span>
+                        <button onclick="addToCart('Titanium Armor Case', 34.99)" class="px-4 py-2 bg-accentBlue hover:bg-accentHover rounded-xl text-sm font-semibold transition-colors">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="bg-cardBg border border-gray-800 rounded-2xl overflow-hidden group hover:border-gray-700 transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="relative overflow-hidden h-56">
+                            <img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&q=80&w=500" alt="Wireless Earbuds" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <span class="text-xs font-semibold text-blue-400 uppercase tracking-wider">Audio</span>
+                            <h3 class="text-lg font-bold mt-1">SonicPod Pro Earbuds</h3>
+                            <p class="text-gray-400 text-sm mt-2">Active noise cancellation with 30-hour battery life casing.</p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 flex items-center justify-between">
+                        <span class="text-xl font-black text-white">$79.00</span>
+                        <button onclick="addToCart('SonicPod Pro Earbuds', 79.00)" class="px-4 py-2 bg-accentBlue hover:bg-accentHover rounded-xl text-sm font-semibold transition-colors">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide-over Cart Drawer -->
+    <div id="cart-drawer" class="fixed inset-0 z-50 overflow-hidden hidden">
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity" onclick="toggleCart()"></div>
+        <div class="absolute inset-y-0 right-0 max-w-full flex pl-10">
+            <div class="w-screen max-w-md bg-cardBg border-l border-gray-800 flex flex-col shadow-2xl">
+                <div class="flex items-center justify-between px-6 py-5 border-b border-gray-800">
+                    <h2 class="text-lg font-bold flex items-center space-x-2">
+                        <i class="fa-solid fa-bag-shopping text-blue-400"></i>
+                        <span>Your Cart</span>
+                    </h2>
+                    <button onclick="toggleCart()" class="p-2 text-gray-400 hover:text-white">
+                        <i class="fa-solid fa-xmark text-lg"></i>
+                    </button>
+                </div>
+                <div id="cart-items" class="flex-1 overflow-y-auto p-6 space-y-4">
+                    <!-- Dynamic Cart Items injected here -->
+                    <p id="empty-cart-msg" class="text-gray-400 text-center py-12">Your cart is currently empty.</p>
+                </div>
+                <div class="border-t border-gray-800 p-6 space-y-4">
+                    <div class="flex items-center justify-between text-base font-semibold">
+                        <span>Subtotal</span>
+                        <span id="cart-total" class="text-blue-400">$0.00</span>
+                    </div>
+                    <button onclick="checkout()" class="w-full py-3.5 bg-accentBlue hover:bg-accentHover text-white font-bold rounded-xl shadow-lg shadow-blue-600/30 transition-all text-center">
+                        Proceed to Checkout
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="support" class="bg-cardBg/60 border-t border-gray-800 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-400 text-sm">
+            <p>&copy; 2026 NexusGear. All rights reserved. Premium Smartphone Accessories.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Interactive Logic -->
+    <script>
+        let cart = [];
+
+        function toggleCart() {
+            const drawer = document.getElementById('cart-drawer');
+            drawer.classList.toggle('hidden');
+        }
+
+        function addToCart(name, price) {
+            const existingItem = cart.find(item => item.name === name);
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({ name, price, quantity: 1 });
+            }
+            updateCartUI();
+            toggleCart();
+        }
+
+        function removeFromCart(name) {
+            cart = cart.filter(item => item.name !== name);
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            const cartItemsContainer = document.getElementById('cart-items');
+            const cartCount = document.getElementById('cart-count');
+            const cartTotal = document.getElementById('cart-total');
+            const emptyMsg = document.getElementById('empty-cart-msg');
+
+            cartCount.innerText = cart.reduce((total, item) => total + item.quantity, 0);
+
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = '<p id="empty-cart-msg" class="text-gray-400 text-center py-12">Your cart is currently empty.</p>';
+                cartTotal.innerText = '$0.00';
+                return;
+            }
+
+            cartItemsContainer.innerHTML = '';
+            let total = 0;
+
+            cart.forEach(item => {
+                total += item.price * item.quantity;
+                const itemEl = document.createElement('div');
+                itemEl.className = 'flex items-center justify-between bg-darkBg/50 border border-gray-800 p-4 rounded-xl';
+                itemEl.innerHTML = `
+                    <div>
+                        <h4 class="font-bold text-sm">${item.name}</h4>
+                        <p class="text-gray-400 text-xs mt-0.5">$${item.price.toFixed(2)} x ${item.quantity}</p>
+                    </div>
+                    <button onclick="removeFromCart('${item.name}')" class="text-red-400 hover:text-red-300 text-sm p-1">
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+                `;
+                cartItemsContainer.appendChild(itemEl);
+            });
+
+            cartTotal.innerText = `$${total.toFixed(2)}`;
+        }
+
+        function checkout() {
+            if (cart.length === 0) {
+                alert("Your cart is empty!");
+                return;
+            }
+            alert("Thank you for your order! Checkout integration is complete.");
+            cart = [];
+            updateCartUI();
+            toggleCart();
+        }
+    </script>
+</body>
+</html>
